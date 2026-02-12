@@ -9,8 +9,4 @@ class PacTable(models.Model):
     Department = models.CharField(max_length=255)
 
     def __str__(self):
-        return (f"PAC ID: {self.PacID}\n",
-                f"First Name: {self.FirstName}\n"
-                f"Last Name: {self.LastName}\n"
-                f"Email: {self.Email}\n",
-                f"Department: {self.Department}")
+        return f"PAC {self.PacID}: {self.FirstName} {self.LastName} ({self.Email}) - {self.Department}"
