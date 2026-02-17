@@ -21,3 +21,4 @@ class StudentTable(models.Model):
     Email = models.EmailField(max_length=255, null=False)
     Course = models.CharField(max_length=255, null=False)
     DOB = models.DateField(null=False)
+
