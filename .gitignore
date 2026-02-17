@@ -1,0 +1,16 @@
+# --- Python bytecode / caches ---
+__pycache__/
+*.py[cod]
+*$py.class
+
+# --- Virtual environments ---
+.venv/
+venv/
+
+# --- IDE files ---
+.idea/
+*.iml
+
+# --- OS junk ---
+.DS_Store
+Thumbs.db
