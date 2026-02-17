@@ -1,6 +1,7 @@
 from django.contrib import admin
-import models
+from . models import PacTable
+from . models import StudentTable
 
 # Register your models here.
-admin.site.register(models.PacTable)
-admin.site.register(models.StudentTable)
+admin.site.register(PacTable)
+admin.site.register(StudentTable)
