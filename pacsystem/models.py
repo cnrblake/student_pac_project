@@ -13,13 +13,8 @@ class PacTable(models.Model):
     
 class StudentTable(models.Model):
     StudentID = models.AutoField(primary_key=True)
-<<<<<<< Updated upstream
     PacID = models.ForeignKey(PacTable, on_delete=models.CASCADE, null = True, blank = True ) # need to fill foreign key in
 
-=======
-    PacID = models.ForeignKey(PacTable, on_delete=models.CASCADE) # need to fill foreign key in
-    
->>>>>>> Stashed changes
     FirstName = models.CharField(max_length=255, null=False)
     LastName = models.CharField(max_length=255, null=False)
 
