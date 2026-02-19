@@ -21,5 +21,7 @@ def add_student_view(request):
     context = {'form': form}
     return render(request, 'studentpac/add_student.html', context)
 
-
+def assigned_studnets_to_Pac(request):
+    pacs= PacTable.objects.prefetch_related('studenttable_set').all()
+    return render(request, 'pac_student.html',{'pacs': pacs})
 
