@@ -1,10 +1,16 @@
 from django import forms
-from .models import StudentTable
+from . import models
 
 class StudentForm(forms.ModelForm):
     class Meta:
-        model = StudentTable
+        model = models.StudentTable
         fields = ['PacID', 'FirstName', 'LastName', 'Email', 'Course', 'DOB']
         widgets = {
             'DOB': forms.DateInput(attrs={'type': 'date'}),
         }
+
+class PACForm(forms.ModelForm):
+    class Meta:
+        model = models.PacTable
+        fields = ['FirstName', 'LastName', 'Email', 'Department']
+        
