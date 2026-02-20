@@ -9,7 +9,7 @@ class StudentForm(forms.ModelForm):
             'DOB': forms.DateInput(attrs={'type': 'date'}),
         }
 
-class PACForm(forms.ModelForm):
+class PacForm(forms.ModelForm):
     class Meta:
         model = models.PacTable
         fields = ['FirstName', 'LastName', 'Email', 'Department']
