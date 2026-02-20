@@ -1,8 +1,6 @@
 from django.shortcuts import render, redirect
 from .models import StudentTable
-from .models import PacTable
-from .forms import StudentForm, PACForm
-
+from .forms import StudentForm
 
 # Create your views here.
 
@@ -23,24 +21,7 @@ def add_student_view(request):
     context = {'form': form}
     return render(request, 'studentpac/add_student.html', context)
 
-
-def pac_view(request):
-    pacs = PacTable.objects.all()
-    context = {'pacs': pacs}
-    return render(request, 'studentpac/pac.html', context)
-
-
-
-
-def add_pac_view(request):
-    if request.method == 'POST':
-        form = PACForm(request.POST)
-        if form.is_valid():
-            form.save()
-            return redirect('pac_view')
-    else:
-        form = PACForm()
-
-    context = {'form': form}
-    return render(request, 'studentpac/add_PAC.html', context)
+def assigned_studnets_to_Pac(request):
+    pacs= PacTable.objects.prefetch_related('studenttable_set').all()
+    return render(request, 'pac_student.html',{'pacs': pacs})
 
