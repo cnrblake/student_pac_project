@@ -4,17 +4,22 @@ from .forms import StudentForm, PacForm
 
 # Create your views here.
 
+
 def home_view(request):
+    return render(request, 'studentpac/home.html')
+
+
+def student_view(request):
     students = StudentTable.objects.all()
     context = {'students': students}
-    return render(request, 'studentpac/home.html', context)
+    return render(request, 'studentpac/student.html', context)
 
 def add_student_view(request):
     if request.method == 'POST':
         form = StudentForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('home')
+            return redirect('student_view')
     else:
         form = StudentForm()
 
@@ -34,7 +39,6 @@ def add_pac_view(request):
             return redirect('pac_view')
     else:
         form = PacForm()
-
     context = {'form': form}
     return render(request, 'studentpac/add_PAC.html', context)
 

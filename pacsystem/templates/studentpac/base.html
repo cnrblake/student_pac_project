@@ -1,3 +1,4 @@
+<! --Here is the base template for the PAC system. Includes a navbar with links to the home page and the PAC view. please extend off this template do not edit. -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,6 +13,7 @@
             <div class="navbar-nav">
                 <a class="nav-link" href="{% url 'home' %}">Home</a>
                 <a class="nav-link" href="{% url 'pac_view' %}">PAC List</a>
+                <a class="nav-link" href="{% url 'student_view' %}">Student List</a>
             </div>
         </div>
     </nav>
