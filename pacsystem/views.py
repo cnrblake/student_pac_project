@@ -2,9 +2,6 @@ from django.shortcuts import render, redirect
 from .models import StudentTable, PacTable
 from .forms import StudentForm, PacForm
 
-# Create your views here.
-
-
 def home_view(request):
     return render(request, 'studentpac/home.html')
 
@@ -19,12 +16,35 @@ def add_student_view(request):
         form = StudentForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('student_view')
+            return redirect('student_view')  # redirects the user back to the student view page
     else:
         form = StudentForm()
 
     context = {'form': form}
     return render(request, 'studentpac/add_student.html', context)
+
+
+# allows a student row to be modified
+def updateStudent(request, f_oid):
+    obj = StudentTable.objects.get(oid=f_oid)
+    form = StudentForm(instance=obj)
+    if request.mothod == 'POST':
+        form = StudentForm(request.POST, instance=obj)
+        if form.is_valid():
+            form.save()
+            return redirect('student_view') # redirects the user back to the student view page
+    context = {'form': form}
+    return render(request, 'studentpac/edit_student.html', context)
+
+# allows a studend row to be deleted
+def deleteStudent(request, f_oid):
+    obj = StudentTable.objects.get(oid=f_oid)
+    if request.mothod == 'POST':
+        obj.delete()
+        return redirect('student_view')
+    context = {'obj': obj}
+    return render(request, 'studentpac/delete_student.html', context)
+
 
 def pac_view(request):
     pacs = PacTable.objects.all()
@@ -41,6 +61,27 @@ def add_pac_view(request):
         form = PacForm()
     context = {'form': form}
     return render(request, 'studentpac/add_PAC.html', context)
+
+# allows a PAC row to be modified
+def updatePAC(request, f_oid):
+    obj = PacTable.objects.get(oid=f_oid)
+    form = PacForm(instance=obj)
+    if request.mothod == 'POST':
+        form = PacForm(request.POST, instance=obj)
+        if form.is_valid():
+            form.save()
+            return redirect('pac_view') # redirects the user back to the pac view page
+    context = {'form': form}
+    return render(request, 'studentpac/edit_PAC.html', context)
+
+# allows a PAC row to be deleted
+def deletePAC(request, f_oid):
+    obj = PacTable.objects.get(oid=f_oid)
+    if request.mothod == 'POST':
+        obj.delete()
+        return redirect('pac_view')
+    context = {'obj': obj}
+    return render(request, 'studentpac/delete_PAC.html', context)
 
 def assigned_studnets_to_Pac(request):
     pacs = PacTable.objects.prefetch_related('studenttable_set').all()
