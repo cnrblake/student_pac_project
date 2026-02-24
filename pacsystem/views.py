@@ -38,8 +38,8 @@ def updateStudent(request, f_oid):
 
 # allows a student row to be deleted
 def deleteStudent(request, f_oid):
-    obj = StudentTable.objects.get(oid=f_oid)
-    if request.mothod == 'POST':
+    obj = StudentTable.objects.get(StudentID=f_oid)
+    if request.method == 'POST':
         obj.delete()
         return redirect('student_view')
     context = {'obj': obj}
@@ -64,9 +64,9 @@ def add_pac_view(request):
 
 # allows a PAC row to be modified
 def updatePAC(request, f_oid):
-    obj = PacTable.objects.get(oid=f_oid)
+    obj = PacTable.objects.get(PacID=f_oid)
     form = PacForm(instance=obj)
-    if request.mothod == 'POST':
+    if request.method == 'POST':
         form = PacForm(request.POST, instance=obj)
         if form.is_valid():
             form.save()
@@ -76,8 +76,8 @@ def updatePAC(request, f_oid):
 
 # allows a PAC row to be deleted
 def deletePAC(request, f_oid):
-    obj = PacTable.objects.get(oid=f_oid)
-    if request.mothod == 'POST':
+    obj = PacTable.objects.get(PacID=f_oid)
+    if request.method == 'POST':
         obj.delete()
         return redirect('pac_view')
     context = {'obj': obj}
