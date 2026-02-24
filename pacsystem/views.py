@@ -26,9 +26,9 @@ def add_student_view(request):
 
 # allows a student row to be modified
 def updateStudent(request, f_oid):
-    obj = StudentTable.objects.get(oid=f_oid)
+    obj = StudentTable.objects.get(StudentID=f_oid)
     form = StudentForm(instance=obj)
-    if request.mothod == 'POST':
+    if request.method == 'POST':
         form = StudentForm(request.POST, instance=obj)
         if form.is_valid():
             form.save()
@@ -36,7 +36,7 @@ def updateStudent(request, f_oid):
     context = {'form': form}
     return render(request, 'studentpac/edit_student.html', context)
 
-# allows a studend row to be deleted
+# allows a student row to be deleted
 def deleteStudent(request, f_oid):
     obj = StudentTable.objects.get(oid=f_oid)
     if request.mothod == 'POST':
