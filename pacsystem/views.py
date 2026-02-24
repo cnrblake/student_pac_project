@@ -45,6 +45,10 @@ def deleteStudent(request, f_oid):
     context = {'obj': obj}
     return render(request, 'studentpac/delete_student.html', context)
 
+def student_view_by_pac(request, f_oid):
+    obj = StudentTable.objects.get(PacID=f_oid)
+    context = {'students' : obj}
+    return render(request, 'studentpac/home.html',context)
 
 def pac_view(request):
     pacs = PacTable.objects.all()
