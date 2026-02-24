@@ -11,5 +11,6 @@ urlpatterns = [
     path('delete_student/<int:f_oid>/', view=views.deleteStudent, name='delete_student'),
     path('edit_pac/<int:f_oid>/', view=views.updatePAC, name='edit_pac'),
     path('delete_pac/<int:f_oid>/', view=views.deletePAC, name='delete_pac'),
+    path('pac_students/', view=views.assigned_students_to_Pac, name='pac_students'),
 
 ]

@@ -87,6 +87,6 @@ def deletePAC(request, f_oid):
     context = {'obj': obj}
     return render(request, 'studentpac/delete_PAC.html', context)
 
-def assigned_studnets_to_Pac(request):
+def assigned_students_to_Pac(request):
     pacs = PacTable.objects.prefetch_related('studenttable_set').all()
-    return render(request, 'pac_student.html', {'pacs': pacs})
+    return render(request, 'studentpac/pac_student.html', {'pacs': pacs})
