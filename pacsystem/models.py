@@ -1,6 +1,6 @@
 from django.db import models
 
-# initialisation of the PAC and Student table
+# initialization of the PAC and Student table
 class PacTable(models.Model):
     PacID = models.AutoField(primary_key=True)
     FirstName = models.CharField(max_length=64, null=False)
