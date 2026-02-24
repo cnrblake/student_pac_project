@@ -14,7 +14,7 @@ class PacTable(models.Model):
     
 class StudentTable(models.Model):
     StudentID = models.AutoField(primary_key=True)
-    PacID = models.ForeignKey(PacTable, on_delete=models.CASCADE, null=True, blank=True)
+    PacID = models.ForeignKey(PacTable, on_delete=models.SET_NULL, null=True, blank=True)
 
     FirstName = models.CharField(max_length=64, null=False)
     LastName = models.CharField(max_length=64, null=False)
