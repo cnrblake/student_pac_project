@@ -9,7 +9,10 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
-            <a class="navbar-brand" href="{% url 'home' %}">PAC System</a>
+            <a class="navbar-brand d-flex align-items-center" href="{% url 'home' %}">
+                <img src="/static/images/logo.png" alt="PAC Logo" style="height:40px; width:auto;" class="me-2 d-inline-block align-text-top">
+                <span class="d-none d-md-inline">PAC System</span>
+            </a>
             <div class="navbar-nav">
                 <a class="nav-link" href="{% url 'home' %}">Home</a>
                 <a class="nav-link" href="{% url 'pac_view' %}">PAC List</a>
