@@ -1,0 +1,51 @@
+.navbar, .navbar-nav, .navbar-brand, .nav-link {
+	font-family: 'Montserrat', Arial, sans-serif;
+	font-weight: 600;
+	letter-spacing: 0.03em;
+}
+
+.navbar {
+	background: #f5f7fa !important;
+	border-bottom: 1px solid #e5e7eb;
+	box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+
+.nav-link {
+	color: #222 !important;
+	transition: color 0.2s;
+}
+.nav-link:hover {
+	color: #111 !important;
+}
+
+.navbar-brand {
+	color: #222 !important;
+	font-size: 1.3rem;
+}
+body {
+	font-family: 'Montserrat', Arial, sans-serif;
+	font-size: 0.95rem;
+}
+
+/* All buttons same color, professional font, navbar blends */
+.btn, .btn-primary, .btn-outline-secondary, .btn-lg {
+	background-color: #222 !important;
+	border-color: #222 !important;
+	color: #fff !important;
+	font-family: 'Montserrat', Arial, sans-serif;
+	font-weight: 600;
+	letter-spacing: 0.03em;
+}
+
+.btn-outline-secondary {
+	background-color: #222 !important;
+	color: #fff !important;
+}
+body {
+	background: #f5f7fa;
+}
+
+.custom-navbar {
+	background: #f5f7fa !important;
+	border-bottom: 1px solid #e5e7eb;
+}
