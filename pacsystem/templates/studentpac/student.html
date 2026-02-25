@@ -21,7 +21,7 @@
     <tbody>
     {% for student in students %}
     <tr>
-        <td>{{ student.StudentID }}</td>
+        <td>{{ forloop.counter }}</td>
         <td>{{ student.FirstName }}</td>
         <td>{{ student.LastName }}</td>
         <td>{{ student.Email }}</td>

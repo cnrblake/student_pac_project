@@ -9,7 +9,7 @@
 <table class="table table-striped">
     <thead>
     <tr>
-        <th>PAC ID</th>
+        <th>Number</th>
         <th>First Name</th>
         <th>Last Name</th>
         <th>Email</th>
@@ -20,7 +20,7 @@
     <tbody>
     {% for pac in pacs %}
     <tr>
-        <td>{{ pac.PacID }}</td>
+        <td>{{ forloop.counter }}</td>
         <td>{{ pac.FirstName }}</td>
         <td>{{ pac.LastName }}</td>
         <td>{{ pac.Email }}</td>
