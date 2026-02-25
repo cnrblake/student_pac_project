@@ -3,40 +3,31 @@
 {% block title %}Home{% endblock %}
 
 {% block content %}
+{% load static %}
 <div class="row align-items-center mb-5">
 	<div class="col-md-7">
-		<h1 class="display-4 fw-bold mb-3">Welcome to the PAC Academy Portal</h1>
-		<p class="lead">Your gateway to managing PACs and students efficiently. Access PAC lists, student records, and more, all in one place.</p>
+		<h1 class="display-4 fw-bold mb-3">Welcome to the PAC Support Hub</h1>
+		<p class="lead">Our system is designed to support students and Personal Academic Coaches (PACs) with easy access to information and resources.</p>
 		<a href="{% url 'pac_view' %}" class="btn btn-primary btn-lg mt-3">View PACs</a>
 		<a href="{% url 'student_view' %}" class="btn btn-outline-secondary btn-lg mt-3 ms-2">View Students</a>
 	</div>
-	<div class="col-md-5 text-center">
-		<img src="https://via.placeholder.com/350x200?text=Academy+Image" class="img-fluid rounded shadow" alt="Academy Image">
-	</div>
-</div>
 
-<div class="row mb-4">
+
+<div class="row mt-4 mb-5">
 	<div class="col-md-4 text-center">
-		<img src="https://via.placeholder.com/150?text=PAC+Team" class="img-thumbnail mb-2" alt="PAC Team">
-		<h5>PAC Teams</h5>
-		<p>Meet the dedicated PAC teams guiding our students to success.</p>
+		<img src="static/images/teacher.jpg" class="img-thumbnail mb-2" alt="PAC Team">
+		<h5>Personal Academic Coaches</h5>
+		<p>Meet the dedicated PACs who support our students' academic journey.</p>
 	</div>
 	<div class="col-md-4 text-center">
-		<img src="https://via.placeholder.com/150?text=Students" class="img-thumbnail mb-2" alt="Students">
+		<img src="static/images/students.jpg" class="img-thumbnail mb-2" alt="Students">
 		<h5>Our Students</h5>
-		<p>Explore student achievements and academic journeys.</p>
+		<p>Explore student profiles, achievements, and academic progress.</p>
 	</div>
 	<div class="col-md-4 text-center">
-		<img src="https://via.placeholder.com/150?text=Campus" class="img-thumbnail mb-2" alt="Campus">
+		<img src="static/images/campus.jpg" class="img-thumbnail mb-2" alt="Campus">
 		<h5>Campus Life</h5>
-		<p>Discover the vibrant life and opportunities at our academy.</p>
-	</div>
-</div>
-
-<div class="card mt-5">
-	<div class="card-body">
-		<h4 class="card-title">About the PAC System</h4>
-		<p class="card-text">The PAC System is designed to streamline the management of Programme Advisory Committees and student records, making academic administration simple and effective for staff and students alike.</p>
+		<p>Discover the vibrant campus life and facilities available to our students.</p>
 	</div>
 </div>
 {% endblock %}
